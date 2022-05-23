@@ -1,0 +1,95 @@
+from tkinter import *
+import time
+import tkinter as tk
+
+
+root = Tk()
+root.title('Timer')
+root.geometry('600x450')
+root.config(bg = '#000')
+root.resizable(False, False)
+
+
+heading = Label(root, text='Night Shift Cheater', font='Courier 30 bold', bg='#000', fg='#ea3548').pack(pady=10)
+
+Kordinat_secimi = Label(root, bg='white', text='Kornitat secimi', font='verdana 12 bold')
+Kordinat_secimi.place(x=10,y=85,)
+
+opsiyon = StringVar(root)
+opsiyon.set('\t')
+
+opsiyon2 = StringVar(root)
+opsiyon2.set('\t')
+
+opsiyon3 = StringVar(root)
+opsiyon3.set('\t')
+
+hatirlatma_tipi_acilir_menu = OptionMenu(
+    root,
+    opsiyon,
+    "ACW")
+hatirlatma_tipi_acilir_menu.place(x=8,y=120)
+
+hatirlatma_tipi_acilir_menu2 = OptionMenu(
+    root,
+    opsiyon2,
+    "HOLD")
+hatirlatma_tipi_acilir_menu2.place(x=8,y=200)
+
+hatirlatma_tipi_acilir_menu3 = OptionMenu(
+    root,
+    opsiyon3,
+    "HANG UP")
+hatirlatma_tipi_acilir_menu3.place(x=8,y=280)
+
+
+x_kor = StringVar()
+Entry(root,textvariable=x_kor,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=180,y=120)
+x_kor.set('X')
+
+y_kor = StringVar()
+Entry(root,textvariable=y_kor,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=320,y=120)
+y_kor.set('Y')
+
+x_kor2 = StringVar()
+Entry(root,textvariable=x_kor2,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=180,y=200)
+x_kor2.set('X')
+
+y_kor2 = StringVar()
+Entry(root,textvariable=y_kor2,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=320,y=200)
+y_kor2.set('Y')
+
+x_kor3 = StringVar()
+Entry(root,textvariable=x_kor3,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=180,y=280)
+x_kor3.set('X')
+
+y_kor3 = StringVar()
+Entry(root,textvariable=y_kor3,width=4,font='arial 20',bg='#000', fg='#fff',bd=0).place(x=320,y=280)
+y_kor3.set('Y')
+
+
+def select():
+    x_kor.set('X12')
+    y_kor.set('Y24')
+
+def select2():
+    x_kor2.set('X12')
+    y_kor2.set('Y24')
+
+def select3():
+    x_kor3.set('X12')
+    y_kor3.set('Y24')
+
+
+select_butonu = Button(root, text='Select', command=select)
+select_butonu.place(x=400,y=125)
+
+select_butonu2 = Button(root, text='Select', command=select2)
+select_butonu2.place(x=400,y=200)
+
+select_butonu3 = Button(root, text='Select', command=select3)
+select_butonu3.place(x=400,y=280)
+
+button = Button(root,text='Start', bg='#ea3548',bd=0, fg='#fff',width=20, height=2,font='arial 14 bold').pack(padx=5,pady=40,side=BOTTOM,)
+
+root.mainloop()
